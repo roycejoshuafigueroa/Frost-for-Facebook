@@ -23,7 +23,7 @@ private val blankResource: WebResourceResponse by lazy { WebResourceResponse("te
 //these hosts will redirect to a blank resource
 private val blacklistHost: Set<String> =
         setOf(
-//                "edge-chat.facebook.com" //todo make more specific? This is required for message responses
+                //                "edge-chat.facebook.com" //todo make more specific? This is required for message responses
         )
 
 //these hosts will return null and skip logging
@@ -49,7 +49,7 @@ fun WebView.shouldFrostInterceptRequest(request: WebResourceRequest): WebResourc
     val httpUrl = HttpUrl.parse(request.url?.toString() ?: return null) ?: return null
     val host = httpUrl.host()
     val url = httpUrl.toString()
-    if (blacklistHost.contains(host)) return blankResource
+//    if (blacklistHost.contains(host)) return blankResource
     if (whitelistHost.contains(host)) return null
     if (!adWhitelistHost.contains(host) && adblock(context).any { url.contains(it) }) return blankResource
 //    if (!shouldLoadImages && !Prefs.loadMediaOnMeteredNetwork && request.isMedia) return blankResource

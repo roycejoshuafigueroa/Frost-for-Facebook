@@ -12,7 +12,7 @@ import com.pitchedapps.frost.utils.iab.IS_FROST_PRO
 fun SettingsActivity.getMessagePrefs(): KPrefAdapterBuilder.() -> Unit = {
 
     checkbox(if (IS_FROST_PRO) R.string.incognito_mode else R.string.incognito_mode_pro,
-            { !Prefs.loadMediaOnMeteredNetwork }, { Prefs.loadMediaOnMeteredNetwork = !it }) {
+            { Prefs.loadMediaOnMeteredNetwork }, { Prefs.loadMediaOnMeteredNetwork = it }) {
         descRes = R.string.incognito_mode_desc
     }
 
