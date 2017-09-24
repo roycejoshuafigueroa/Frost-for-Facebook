@@ -7,6 +7,8 @@
     <string name="newsfeed">News Feed</string>
     <string name="newsfeed_desc">Define what items appear in the newsfeed</string>
 
+    <string name="messages_desc">Define how messages should be shown and reacted to</string>
+
     <string name="behaviour">Behaviour</string>
     <string name="behaviour_desc">Define how the app interacts in certain settings</string>
 

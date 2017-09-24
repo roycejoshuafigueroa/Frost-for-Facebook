@@ -138,6 +138,8 @@ object Prefs : KPref() {
 
     var loadMediaOnMeteredNetwork: Boolean by kpref("media_on_metered_network", true)
 
+    var incognitoMode: Boolean by kpref("incognito_mode", false)
+
     var debugSettings: Boolean by kpref("debug_settings", false)
 
     var linksInDefaultApp: Boolean by kpref("link_in_default_app", false)

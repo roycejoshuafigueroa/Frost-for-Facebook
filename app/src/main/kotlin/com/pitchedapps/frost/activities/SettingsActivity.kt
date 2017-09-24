@@ -20,6 +20,7 @@ import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.pitchedapps.frost.BuildConfig
 import com.pitchedapps.frost.R
 import com.pitchedapps.frost.enums.Support
+import com.pitchedapps.frost.facebook.FbItem
 import com.pitchedapps.frost.settings.*
 import com.pitchedapps.frost.utils.*
 import com.pitchedapps.frost.utils.iab.FrostBilling
@@ -85,12 +86,17 @@ class SettingsActivity : KPrefActivity(), FrostBilling by IABSettings() {
 
         subItems(R.string.newsfeed, getFeedPrefs()) {
             descRes = R.string.newsfeed_desc
-            iicon = CommunityMaterial.Icon.cmd_newspaper
+            iicon = FbItem.FEED.icon
+        }
+
+        subItems(R.string.messages, getMessagePrefs()) {
+            descRes = R.string.messages_desc
+            iicon = FbItem.MESSAGES.icon
         }
 
         subItems(R.string.notifications, getNotificationPrefs()) {
             descRes = R.string.notifications_desc
-            iicon = GoogleMaterial.Icon.gmd_notifications
+            iicon = FbItem.NOTIFICATIONS.icon
         }
 
 //        subItems(R.string.network, getNetworkPrefs()) {

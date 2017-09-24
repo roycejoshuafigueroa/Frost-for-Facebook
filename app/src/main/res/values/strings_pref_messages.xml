@@ -1,0 +1,5 @@
+<resources>
+    <string name="incognito_mode">Incognito Mode</string>
+    <string name="incognito_mode_pro">Incognito Mode [Pro]</string>
+    <string name="incognito_mode_desc">Opening a message will not notify others that you have seen it. The draw back is that you will need to manually refresh messages when new ones are sent (including messages you send yourself)</string>
+</resources>
