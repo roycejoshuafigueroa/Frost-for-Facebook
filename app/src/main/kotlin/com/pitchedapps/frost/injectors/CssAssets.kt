@@ -14,7 +14,7 @@ import java.util.*
  * The enum name must match the css file name
  */
 enum class CssAssets(val folder: String = "themes") : InjectorContract {
-    MATERIAL_LIGHT, MATERIAL_DARK, MATERIAL_AMOLED, MATERIAL_GLASS, CUSTOM, ROUND_ICONS("components")
+    MATERIAL_LIGHT, MATERIAL_DARK, MATERIAL_AMOLED, MATERIAL_GLASS, CUSTOM, CUSTOM_NIGHT, ROUND_ICONS("components")
     ;
 
     var file = "${name.toLowerCase(Locale.CANADA)}.compact.css"
@@ -24,7 +24,7 @@ enum class CssAssets(val folder: String = "themes") : InjectorContract {
         if (injector == null) {
             try {
                 var content = webView.context.assets.open("css/$folder/$file").bufferedReader().use { it.readText() }
-                if (this == CUSTOM) {
+                if (this == CUSTOM || this == CUSTOM_NIGHT) {
                     val bt: String
                     if (Color.alpha(Prefs.bgColor) == 255) {
                         bt = Prefs.bgColor.toRgbaString()

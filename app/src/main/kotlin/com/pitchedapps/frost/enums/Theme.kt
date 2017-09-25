@@ -7,6 +7,7 @@ import com.pitchedapps.frost.injectors.CssAssets
 import com.pitchedapps.frost.injectors.InjectorContract
 import com.pitchedapps.frost.injectors.JsActions
 import com.pitchedapps.frost.utils.Prefs
+import com.pitchedapps.frost.utils.ThemePrefs
 
 /**
  * Created by Allan Wang on 2017-06-14.
@@ -64,11 +65,19 @@ enum class Theme(@StringRes val textRes: Int,
 
     CUSTOM(R.string.kau_custom,
             CssAssets.CUSTOM,
-            { Prefs.customTextColor },
-            { Prefs.customAccentColor },
-            { Prefs.customBackgroundColor },
-            { Prefs.customHeaderColor },
-            { Prefs.customIconColor });
+            { ThemePrefs.customTextColor },
+            { ThemePrefs.customAccentColor },
+            { ThemePrefs.customBackgroundColor },
+            { ThemePrefs.customHeaderColor },
+            { ThemePrefs.customIconColor }),
+
+    CUSTOM_NIGHT(R.string.kau_custom,
+            CssAssets.CUSTOM,
+            { ThemePrefs.customTextColorNight },
+            { ThemePrefs.customAccentColorNight },
+            { ThemePrefs.customBackgroundColorNight },
+            { ThemePrefs.customHeaderColorNight },
+            { ThemePrefs.customIconColorNight });
 
     val textColor: Int
         get() = textColorGetter()

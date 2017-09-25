@@ -25,6 +25,10 @@ object Prefs : KPref() {
 
     var prevId: Long by kpref("prev_id", -1L)
 
+    /*
+     * Theme
+     */
+
     var theme: Int by kpref("theme", 0, postSetter = { _: Int -> loader.invalidate() })
 
     var customTextColor: Int by kpref("color_text", 0xffeceff1.toInt())
@@ -36,16 +40,6 @@ object Prefs : KPref() {
     var customHeaderColor: Int by kpref("color_header", 0xff01579b.toInt())
 
     var customIconColor: Int by kpref("color_icons", 0xffeceff1.toInt())
-
-    var exitConfirmation: Boolean by kpref("exit_confirmation", true)
-
-    var notificationFreq: Long by kpref("notification_freq", -1L)
-
-    var versionCode: Int by kpref("version_code", -1)
-
-    var installDate: Long by kpref("install_date", -1L)
-
-    var identifier: Int by kpref("identifier", -1)
 
     private val loader = lazyResettable { Theme.values[Prefs.theme] }
 
@@ -76,6 +70,35 @@ object Prefs : KPref() {
 
     val isCustomTheme: Boolean
         get() = t == Theme.CUSTOM
+    /*
+     * Night Theme
+     */
+
+    var themeNightEnabled: Boolean by kpref("theme_night_enabled", false)
+
+    var themeNight: Int by kpref("theme_night", 0, postSetter = { _: Int -> loader.invalidate() })
+
+    var customTextColorNight: Int by kpref("color_text_night", 0xffeceff1.toInt())
+
+    var customAccentColorNight: Int by kpref("color_accent_night", 0xff0288d1.toInt())
+
+    var customBackgroundColorNight: Int by kpref("color_bg_night", 0xff212121.toInt())
+
+    var customHeaderColorNight: Int by kpref("color_header_night", 0xff01579b.toInt())
+
+    var customIconColorNight: Int by kpref("color_icons_night", 0xffeceff1.toInt())
+
+
+
+    var exitConfirmation: Boolean by kpref("exit_confirmation", true)
+
+    var notificationFreq: Long by kpref("notification_freq", -1L)
+
+    var versionCode: Int by kpref("version_code", -1)
+
+    var installDate: Long by kpref("install_date", -1L)
+
+    var identifier: Int by kpref("identifier", -1)
 
     val frostId: String
         get() = "${installDate}-${identifier}"

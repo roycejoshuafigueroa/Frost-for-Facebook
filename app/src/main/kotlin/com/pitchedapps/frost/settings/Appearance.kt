@@ -27,7 +27,8 @@ fun SettingsActivity.getAppearancePrefs(): KPrefAdapterBuilder.() -> Unit = {
             _, _, item ->
             materialDialogThemed {
                 title(R.string.theme)
-                items(Theme.values()
+                items(Theme.values
+                        .filter { it != Theme.CUSTOM_NIGHT }
                         .map { if (it == Theme.CUSTOM && !IS_FROST_PRO) R.string.custom_pro else it.textRes }
                         .map { string(it) })
                 itemsCallbackSingleChoice(item.pref) {
